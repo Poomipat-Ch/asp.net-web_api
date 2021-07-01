@@ -2,7 +2,7 @@
 
 ## using .NET 5.0
 
-- [x] GET
-- [x] CREATE
-- [x] UPDATE
-- [x] DELETE
+* [x] GET
+* [x] CREATE
+* [x] UPDATE
+* [x] DELETE
