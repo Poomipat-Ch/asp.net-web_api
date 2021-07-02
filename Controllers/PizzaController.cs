@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ContosoPizza.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class PizzaController : ControllerBase
     {
         public PizzaController()
@@ -30,7 +30,7 @@ namespace ContosoPizza.Controllers
 
         // POST action
         [HttpPost]
-        public IActionResult Create(Pizza p)
+        public IActionResult Create([FromBody] Pizza p)
         {
             PizzaService.Add(p);
             return CreatedAtAction(nameof(Create), new { id = p.Id }, p);
@@ -38,7 +38,7 @@ namespace ContosoPizza.Controllers
 
         // PUT action
         [HttpPut("{id}")]
-        public IActionResult Update(int id, Pizza p)
+        public IActionResult Update(int id, [FromBody] Pizza p)
         {
             if (id != p.Id)
                 return BadRequest();
